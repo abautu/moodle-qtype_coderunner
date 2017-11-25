@@ -290,7 +290,7 @@ define(['jquery'], function($) {
         // Setup click handler for the buttons that allow users to replace the
         // expected output  with the output got from testing the answer program.
         $('button.replaceexpectedwithgot').click(function() {
-            var gotPre = $(this).hide().prev('pre[id^="id_got_"]');
+            var gotPre = $(this).prev('pre[id^="id_got_"]');
             var testCaseId = gotPre.attr('id').replace('id_got_', '');
             $('#id_expected_' + testCaseId).val(gotPre.text());
             $('#id_fail_expected_' + testCaseId).html(gotPre.text());
